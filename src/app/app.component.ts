@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.setPageTitles();
+    this.authService.checkCredentials();
   }
 
   ngOnDestroy() {
@@ -72,7 +73,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   setColumn(block) {
-    if (this.cartService.boughtProducts === null) {this.cartService.boughtProducts = []};
     const flag = this.cartService.isDisplayed;
     let classes;
     if ( block === 'main' ) {
